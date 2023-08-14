@@ -1,5 +1,6 @@
 # padaria-api
-[![NPM](https//img.shelds.io/npm/l/react](https://github.com/proj-padaria/padaria-api/blob/main/LICENSE))
+[![NPM](https://img.shields.io/npm/l/react)](https%3A%2F%2Fgithub.com%2Fproj-padaria%2Fpadaria-api%2Fblob%2Fmain%2FLICENSE)
+
 Serviços (back-end) para o sistema de gestão de padarias.
 
 ### Sobre o projeto

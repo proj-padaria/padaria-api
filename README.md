@@ -18,3 +18,6 @@ A aplicação fornece os end points para o projeto de front end.
 <li>Spring Boot</li>
 <li>JPA / Hibernate</li>
 <li>Maven</li>
+
+# Banco de dados - Modelagem e DDL
+https://github.com/proj-padaria/padaria-doc

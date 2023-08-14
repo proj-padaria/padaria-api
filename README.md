@@ -1,5 +1,5 @@
 # padaria-api
-[![NPM](https//img.shelds.io/npm/l/react](https:github/com/devsuperior/sds1-wmazoni/blob/master/LICENSE)
+[![NPM](https//img.shelds.io/npm/l/react](https://github.com/proj-padaria/padaria-api/blob/main/LICENSE))
 Serviços (back-end) para o sistema de gestão de padarias.
 
 ### Sobre o projeto

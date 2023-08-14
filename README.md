@@ -1,7 +1,7 @@
 # padaria-api
 Serviços (back-end) para o sistema de gestão de padarias.
 
-# Sobre o projeto
+### Sobre o projeto
 
 O projeto padaria é uma aplicação back-end, como atividade final de um treinamento que tivemos com os seguintes módulos:
 <li>TI-Introdução
@@ -13,11 +13,22 @@ O projeto padaria é uma aplicação back-end, como atividade final de um treina
 
 A aplicação fornece os end points para o projeto de front end.
 
-# Tecnologias utilizadas
+### Tecnologias utilizadas
 <li>Java</li>
 <li>Spring Boot</li>
 <li>JPA / Hibernate</li>
 <li>Maven</li>
 
-# Banco de dados - Modelagem e DDL
+### Banco de dados - Modelagem e DDL
 https://github.com/proj-padaria/padaria-doc
+
+Banco de dados utilizado: PostgreSQL com modelagem normalizada.
+
+Modelagem documentada no MySQLWorkbench.
+
+### Autores
+Ana Júlia https://www.linkedin.com/in/ana
+
+Gustavo https://www.linkedin.com/in/gustavo
+
+Renan https://www.linkedin.com/in/renan

@@ -2,6 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <profile default="true" name="Default" enabled="true" />
+=======
+>>>>>>> 82921ead4210105cd77c0304cc6b23705f6da49f
+>>>>>>> e4e5cac47b32a4b1425bfb3544982a4ffda6f1b8
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />

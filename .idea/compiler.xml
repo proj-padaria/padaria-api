@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+<<<<<<< HEAD
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
+=======
+    <bytecodeTargetLevel>
+      <module name="padaria" target="17" />
+    </bytecodeTargetLevel>
+>>>>>>> 1d406cf9f4c9389c57a41579641f1377f776ea19
   </component>
 </project>

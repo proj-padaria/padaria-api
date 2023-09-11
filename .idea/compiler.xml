@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-<<<<<<< HEAD
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="padaria" />
+      </profile>
     </annotationProcessing>
-=======
-    <bytecodeTargetLevel>
-      <module name="padaria" target="17" />
-    </bytecodeTargetLevel>
->>>>>>> 1d406cf9f4c9389c57a41579641f1377f776ea19
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="padaria" options="-parameters" />
+    </option>
   </component>
 </project>

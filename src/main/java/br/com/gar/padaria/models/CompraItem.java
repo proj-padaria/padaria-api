@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "compras_itens")
 
-public class ComprasItens implements Serializable {
+public class CompraItem implements Serializable {
     private static final long serialVersion = 1L;
 
     @Id
@@ -18,11 +18,11 @@ public class ComprasItens implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "compra_id")
-    private Compras compras;
+    private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "produto_id")
-    private Produto produtos;
+    private Produto produto;
 
     @Column(nullable = false, length = 12)
     private String quantidade_comprada;

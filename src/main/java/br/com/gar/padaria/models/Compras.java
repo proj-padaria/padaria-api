@@ -16,9 +16,9 @@ public class Compras implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "fornecedor_id")
-    private Fornecedor fornecedor;
+    //@ManyToOne
+   // @JoinColumn(name = "fornecedor_id")
+    //private Fornecedor fornecedor;
 
     @ManyToOne
     @JoinColumn(name = "plano_pagamento_id")

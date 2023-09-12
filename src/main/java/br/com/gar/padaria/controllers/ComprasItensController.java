@@ -19,12 +19,6 @@ public class ComprasItensController {
         return comprasItensRepository.findAll();
     }
 
-    @GetMapping("id/{id}")
-    public ComprasItens selectedById(@PathVariable Integer id) {
-
-        return comprasItensRepository.findById(id).get();
-    }
-
     @PostMapping("save")
     public ComprasItens comprasItensSave(@RequestBody ComprasItens comprasItensModel) {
         ComprasItens comprasItens = comprasItensRepository.save(comprasItensModel);

@@ -1,15 +1,13 @@
 package br.com.gar.padaria.repositories;
 
 import br.com.gar.padaria.models.ComprasItens;
+import br.com.gar.padaria.models.Empresa;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ComprasItensRepository {
-    void deleteById(Integer id);
+public interface ComprasItensRepository extends JpaRepository<ComprasItens,String> {
 
-    ThreadLocal<Object> findById(Integer id);
 
-    List<ComprasItens> findAll();
 
-    ComprasItens save(ComprasItens comprasItensModel);
 }

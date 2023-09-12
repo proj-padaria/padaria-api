@@ -22,7 +22,7 @@ public class ComprasItens implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "produto_id")
-    private Produtos produtos;
+    private Produto produtos;
 
     @Column(nullable = false, length = 12)
     private String quantidade_comprada;

@@ -31,7 +31,7 @@ public class Pessoa implements Serializable {
     private String logradouro;
 
     @Column(nullable = false, length = 10)
-    private String logradouroNumero;
+    private String logradouro_numero;
 
     @Column(nullable = false, length = 30)
     private String bairro;

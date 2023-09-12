@@ -27,10 +27,10 @@ public class Compras implements Serializable {
     @Column(nullable = false, length = 8)
     private String data_compra;
 
-    @Column(nullable = false, length = 12)
+    @Column(nullable = false, length = 14)
     private String valor_total_comprado;
 
-    @Column(nullable = true, length = 12)
+    @Column(nullable = true, length = 14)
     private String valort_total_recebido;
 
     @Column(nullable = true, length = 8)

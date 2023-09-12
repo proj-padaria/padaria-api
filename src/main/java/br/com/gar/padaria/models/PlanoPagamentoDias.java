@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "planos_pagamento_dias")
 
-public class PlanosPagamentoDias implements Serializable {
+public class PlanoPagamentoDias implements Serializable {
     private static final long serialVersion = 1L;
 
 
@@ -18,7 +18,7 @@ public class PlanosPagamentoDias implements Serializable {
 
     @ManyToOne      //Aqui preciso confirmar o tipo de ligação
     @JoinColumn(name = "plano_pagamento_id")
-    private PlanosPagamento planosPagamento;
+    private PlanoPagamento planosPagamento;
 
     @Column(nullable = false)
     private Integer diasDoVencimento;

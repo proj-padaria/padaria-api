@@ -1,11 +1,11 @@
 package br.com.gar.padaria.repositories;
 
-import br.com.gar.padaria.models.Telefones;
+import br.com.gar.padaria.models.Telefone;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface TelefoneRepository extends JpaRepository<Telefones, Integer> {
+public interface TelefoneRepository extends JpaRepository<Telefone, Integer> {
 
-    List<Telefones> findAllByDdd(String ddd);
+    List<Telefone> findAllByDdd(String ddd);
 }

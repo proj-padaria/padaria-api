@@ -1,6 +1,6 @@
 package br.com.gar.padaria.controllers;
 
-import br.com.gar.padaria.models.Pessoas;
+import br.com.gar.padaria.models.Pessoa;
 import br.com.gar.padaria.repositories.PessoasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,28 +9,28 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "clientes")
-public class PessoasController {
+public class PessoaController {
     @Autowired
     private PessoasRepository pessoasRepository;
 
     @GetMapping("list")
-    public List<Pessoas> findAll() {
+    public List<Pessoa> findAll() {
         return pessoasRepository.findAll();
     }
 
     @GetMapping("id/{id}")
-    public Pessoas selectedById(@PathVariable Integer id) {
+    public Pessoa selectedById(@PathVariable Integer id) {
         return pessoasRepository.findById(id).get();
     }
 
     @PostMapping("save")
-    public Pessoas pessoasSave(@RequestBody Pessoas pessoasModel) {
-        Pessoas pessoas = pessoasRepository.save(pessoasModel);
+    public Pessoa pessoasSave(@RequestBody Pessoa pessoasModel) {
+        Pessoa pessoas = pessoasRepository.save(pessoasModel);
         return pessoas;
     }
 
     @GetMapping("nome/{nome}")
-    public Pessoas selectedByNome(@PathVariable String nome) {
+    public Pessoa selectedByNome(@PathVariable String nome) {
         return pessoasRepository.findByNomeIgnoreCase(nome);
     }
 
@@ -40,7 +40,7 @@ public class PessoasController {
     }
 
     @GetMapping("list/{ascDesc}")
-    public List<Pessoas> findAllSortNome(@PathVariable String ascDesc) {
+    public List<Pessoa> findAllSortNome(@PathVariable String ascDesc) {
         if (ascDesc.toUpperCase().equals("ASC")){
             return pessoasRepository.findByOrderByNomeAsc();
         }

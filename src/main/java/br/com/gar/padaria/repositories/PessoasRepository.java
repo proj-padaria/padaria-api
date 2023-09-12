@@ -1,15 +1,15 @@
 package br.com.gar.padaria.repositories;
 
-import br.com.gar.padaria.models.Pessoas;
+import br.com.gar.padaria.models.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PessoasRepository extends JpaRepository<Pessoas, Integer> {
+public interface PessoasRepository extends JpaRepository<Pessoa, Integer> {
 
-    Pessoas findByNomeIgnoreCase(String nome);
+    Pessoa findByNomeIgnoreCase(String nome);
 
-    List<Pessoas> findByOrderByNomeAsc();
+    List<Pessoa> findByOrderByNomeAsc();
 
-    List<Pessoas> findByOrderByNomeDesc();
+    List<Pessoa> findByOrderByNomeDesc();
 }

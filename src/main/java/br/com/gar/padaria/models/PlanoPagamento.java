@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "planos_pagamento")
 
-public class PlanosPagamento implements Serializable {
+public class PlanoPagamento implements Serializable {
     private static final long serialVersion = 1L;
 
     @jakarta.persistence.Id

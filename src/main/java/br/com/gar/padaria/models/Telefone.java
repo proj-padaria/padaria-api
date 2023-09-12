@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "telefones")
 
-public class Telefones implements Serializable {
+public class Telefone implements Serializable {
     private static final long serialVersion = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Telefones implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
-    private  Pessoas pessoas;
+    private Pessoa pessoas;
 
     @Column(nullable = false, length = 3)
     private String ddd;

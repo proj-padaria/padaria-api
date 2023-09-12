@@ -1,6 +1,6 @@
 package br.com.gar.padaria.controllers;
 
-import br.com.gar.padaria.models.Telefones;
+import br.com.gar.padaria.models.Telefone;
 import br.com.gar.padaria.repositories.TelefoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,23 +15,23 @@ public class TelefoneController {
     private TelefoneRepository telefoneRepository;
 
     @GetMapping("list")
-    public List<Telefones> findAll(){
+    public List<Telefone> findAll(){
         return telefoneRepository.findAll();
     }
 
     @GetMapping("id/{id}")
-    public Telefones selectedById(@PathVariable Integer id) {
+    public Telefone selectedById(@PathVariable Integer id) {
         return telefoneRepository.findById(id).get();
     }
 
     @PostMapping("save")
-    public Telefones telefonesSave(@RequestBody Telefones telefonesModel) {
-        Telefones telefones = telefoneRepository.save(telefonesModel);
+    public Telefone telefonesSave(@RequestBody Telefone telefonesModel) {
+        Telefone telefones = telefoneRepository.save(telefonesModel);
         return telefones;
     }
 
     @GetMapping("ddd/{ddd}")
-    public List<Telefones> selectById(@PathVariable String ddd){
+    public List<Telefone> selectById(@PathVariable String ddd){
         return telefoneRepository.findAllByDdd(ddd);
     }
 

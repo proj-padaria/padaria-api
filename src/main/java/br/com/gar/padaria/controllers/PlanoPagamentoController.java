@@ -1,7 +1,6 @@
 package br.com.gar.padaria.controllers;
-import br.com.gar.padaria.models.Cidade;
-import br.com.gar.padaria.models.PlanosPagamento;
-import br.com.gar.padaria.repositories.PlanosPagamentoRepository;
+import br.com.gar.padaria.models.PlanoPagamento;
+import br.com.gar.padaria.repositories.PlanoPagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,17 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/planos_pagamento")
 
-public class PlanosPagamentoController {
+public class PlanoPagamentoController {
     @Autowired
-    private PlanosPagamentoRepository planosPagamentoRepository;
+    private PlanoPagamentoRepository planosPagamentoRepository;
 
     @GetMapping("list")
-    public List<PlanosPagamento> findAll() {
+    public List<PlanoPagamento> findAll() {
         return planosPagamentoRepository.findAll();
     }
 
     @GetMapping("id/{id}")
-    public PlanosPagamento selectById(@PathVariable("id") Integer id) {
+    public PlanoPagamento selectById(@PathVariable("id") Integer id) {
         return planosPagamentoRepository.findById(id).get();
     }
 }

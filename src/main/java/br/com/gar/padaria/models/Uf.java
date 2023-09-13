@@ -10,7 +10,8 @@ import java.io.Serializable;
 public class Uf implements Serializable {
     private static final long serialVersion = 1L;
 
-    @jakarta.persistence.Id
+    // @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 

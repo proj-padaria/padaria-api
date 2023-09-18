@@ -33,4 +33,9 @@ public class ProdutoController {
         produtoRepository.deleteById(id);
 
     }
+
+    @GetMapping("reajustarPreco/{percentualReajuste}")
+    public int reajustarPreco(@PathVariable("percentualReajuste") Integer percentualReajuste) {
+        return produtoRepository.f_reajuste_preco_venda(percentualReajuste);
+    }
 }

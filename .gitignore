@@ -23,4 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+# arquivos de backup
+*.bak
+
+# arquivos do IntelliJ IDE
+.idea
 

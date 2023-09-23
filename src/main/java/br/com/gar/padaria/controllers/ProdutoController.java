@@ -38,4 +38,11 @@ public class ProdutoController {
     public int reajustarPreco(@PathVariable("percentualReajuste") Integer percentualReajuste) {
         return produtoRepository.f_reajuste_preco_venda(percentualReajuste);
     }
+
+  /*  @GetMapping("/estoquePontoPedido/{pontoPedido}")
+    public List<Produto> findByEstoqueLessThan (@PathVariable("pontoPedido") Integer pontoPedido) {
+        return produtoRepository.findByEstoqueLessThan(pontoPedido);
+    } */
+    //END POINT COM ERRO
 }
+

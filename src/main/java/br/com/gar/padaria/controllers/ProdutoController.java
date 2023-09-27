@@ -39,10 +39,10 @@ public class ProdutoController {
         return produtoRepository.f_reajuste_preco_venda(percentualReajuste);
     }
 
-  /*  @GetMapping("/estoquePontoPedido/{pontoPedido}")
-    public List<Produto> findByEstoqueLessThan (@PathVariable("pontoPedido") Integer pontoPedido) {
-        return produtoRepository.findByEstoqueLessThan(pontoPedido);
-    } */
+        @GetMapping("estoquePontoPedido/{pontoPedidoProduto}")
+       public List<Produto> f_verifica_ponto_pedido(@PathVariable ("pontoPedidoProduto") Integer pontoPedidoProduto) {
+           return produtoRepository.f_verifica_ponto_pedido(pontoPedidoProduto);
+    }
     //END POINT COM ERRO
 }
 

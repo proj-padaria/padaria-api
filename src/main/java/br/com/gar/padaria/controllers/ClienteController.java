@@ -26,13 +26,11 @@ public class ClienteController {
         return clienteRepository.findById(id).get();
     }
 
-    /*
     @PostMapping(value = "/save")
     public Cliente clientesSave(@RequestBody Cliente clienteModel) {
             return clienteRepository.save(clienteModel);
         }
 
-     */
     @DeleteMapping(value = "delete/{id}")
     public void clienteDeleteById(@PathVariable Integer id) {
         clienteRepository.deleteById(id);

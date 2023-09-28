@@ -1,5 +1,6 @@
 package br.com.gar.padaria.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -7,26 +8,20 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "telefones")
+@Table(name = "fornecedores")
 
-public class Telefone implements Serializable {
+
+public class Fornecedor implements Serializable {
     private static final long serialVersion = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoas;
 
-    @Column(nullable = false, length = 3)
-    private String ddd;
-
-    @Column(nullable = false, length = 10)
-    private String numero;
-
-    @Column(nullable = false, length = 1)
-    private String tipo;
-
+    @Column(nullable = false, length = 15)
+    private String cnpj;
 }

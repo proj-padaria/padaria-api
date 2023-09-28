@@ -20,9 +20,7 @@ public class FornecedorController {
     private FornecedorRepository fornecedorRepository;
 
     @GetMapping("list")
-    public List<Fornecedor> findAll(){
+    public List<Fornecedor> findAll() {
         return fornecedorRepository.findAll();
     }
-
-
 }

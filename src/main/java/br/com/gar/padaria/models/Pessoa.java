@@ -19,9 +19,6 @@ public class Pessoa implements Serializable {
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
 
-    @ManyToOne
-    @JoinColumn(name = "telefone_id")
-    private Telefone telefones;
 
     @Column(nullable = false, length = 40)
     private String nome;
@@ -43,6 +40,6 @@ public class Pessoa implements Serializable {
     private String email;
 
     @Column(nullable = false, length = 8)
-    private String data_do_cadastro;
+    private String data_cadastro;
 
 }

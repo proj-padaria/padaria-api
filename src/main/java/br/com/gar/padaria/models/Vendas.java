@@ -33,4 +33,5 @@ public class Vendas implements Serializable {
 
     @Column(length = 14)
     private String  fiado;
+
 }

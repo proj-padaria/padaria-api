@@ -2,10 +2,7 @@ package br.com.gar.padaria.controllers;
 import br.com.gar.padaria.models.Fornecedor;
 import br.com.gar.padaria.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +25,8 @@ public class FornecedorController {
         return fornecedorRepository.findById(id).get();
     }
 
+    @DeleteMapping("delete/{id}")
+    public void fornecedorDeleteById(@PathVariable Integer id) {
+        fornecedorRepository.deleteById(id);
+    }
 }

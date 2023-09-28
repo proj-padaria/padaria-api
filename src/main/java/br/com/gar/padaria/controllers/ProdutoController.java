@@ -1,4 +1,5 @@
 package br.com.gar.padaria.controllers;
+import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Produto;
 import br.com.gar.padaria.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +40,9 @@ public class ProdutoController {
         return produtoRepository.f_reajuste_preco_venda(percentualReajuste);
     }
 
-        @GetMapping("estoquePontoPedido/{pontoPedidoProduto}")
-       public List<Produto> f_verifica_ponto_pedido(@PathVariable ("pontoPedidoProduto") Integer pontoPedidoProduto) {
-           return produtoRepository.f_verifica_ponto_pedido(pontoPedidoProduto);
+        @GetMapping("estoquePontoPedido")
+       public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
+           return produtoRepository.verifica_ponto_pedido();
     }
     //END POINT COM ERRO
 }

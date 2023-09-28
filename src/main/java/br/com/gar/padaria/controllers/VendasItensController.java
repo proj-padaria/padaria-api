@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/vendas_itens")
 
-
 public class VendasItensController {
 
     @Autowired

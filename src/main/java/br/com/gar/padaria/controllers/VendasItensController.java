@@ -1,4 +1,5 @@
 package br.com.gar.padaria.controllers;
+import br.com.gar.padaria.models.Vendas;
 import br.com.gar.padaria.models.VendasItens;
 import br.com.gar.padaria.repositories.VendasItensRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class VendasItensController {
     @GetMapping("id/{id}")
     public VendasItens selectedById(@PathVariable Integer id) {
         return vendasItensRepository.findById(id).get();
+    }
+
+    @PostMapping(value = "/save")
+    public VendasItens vendasItensSave(@RequestBody VendasItens vendasItensModel) {
+        return vendasItensRepository.save(vendasItensModel);
     }
 
     @DeleteMapping(value = "delete/{id}")

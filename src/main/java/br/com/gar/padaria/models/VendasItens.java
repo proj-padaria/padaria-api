@@ -30,5 +30,4 @@ public class VendasItens implements Serializable {
 
     @Column(length = 14)
     private String  total_da_linha;
-
 }

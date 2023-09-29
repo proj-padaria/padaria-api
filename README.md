@@ -15,30 +15,32 @@ O projeto padaria é uma aplicação back-end, como atividade final de um treina
 <li>Java Spring Boot</li>
 
 
-A aplicação fornece os end points para o projeto de front end.
-A api foi codificada em java e os dados de implantação estão em padaria-doc.
+
+  A aplicação fornece os end points para o projeto de front end. 
+
+As API's foram codificadas em java e os dados de implantação estão em padaria-doc.
 
 ### Documentação
 
-A documentação deste projeto e as ddl's para execução do banco de dados encontra-se em padaria-doc
+A documentação deste projeto e as ddl's para execução do banco de dados encontram-se em padaria-doc.
+
 
 ### Como usar 
  <!--ts-->
-<li>* [Pre Requisitos](#pre-requisitos)</li>
-
-<li>*-Necessário Instalação de uma IDE(recomendado IntelliJ) para integração com o banco de dados</li>
- 
-<li>* -Necessário Instalação de um SQL(recomendado Postgresql) para que as ddl's sejam executadas</li>
- 
-<li>* -Necessário Instalação de software que permite enviar solicitações HTTP para APIs (recomendado Postman) para que seja possível o teste dos end points</li>
+* [Pré-Requisitos](#pre-requisitos)
   
-<li>* [Recomendações](#recomendações)</li>
+  - Necessário Instalação de uma IDE(recomendado IntelliJ) para integração com o banco de dados  
+  - Necessário Instalação de um SQL(recomendado Postgresql) para que as ddl's sejam executadas  
+  - Necessário Instalação de software que permite enviar solicitações HTTP para APIs (recomendado Postman) para que seja possível o teste dos end points
+  <!--te-->
 
- <li>Para que seja possível a conclusão dos testes do projeto é necessário que as ddl's sejam executadas no banco de dados.
- Após a execução das ddl's o projeto padaria-api deverá ser executado na IDE para que o localhost seja gerado e os endpoint's sejam testados.
- Com a IDE em execução os end point's poderão ser testados e o teste do projeto concluído.</li>
- 
- <!--te-->
+  <!--ts-->
+* [Recomendações](#recomendações)
+   
+  Para  a conclusão dos testes do projeto é necessário que as ddl's sejam executadas no banco de dados.
+  Após a execução das ddl's, o projeto padaria-api deverá ser executado na IDE para que o localhost seja gerado e os endpoint's sejam testados.
+  
+  <!--te-->
 
 ### Tecnologias utilizadas
 <li>Java</li>

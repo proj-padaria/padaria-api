@@ -28,6 +28,7 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 
+
     @Query(value = "SELECT departamento_id, produto_id, nome, preco_venda, preco_unitario " +
             "       FROM produtos " +
             "       INNER JOIN compras_itens" +
@@ -36,4 +37,5 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             "       ORDER BY nome ", nativeQuery = true)
 
     List<ProdutosMargemMenorDTO> produtos_margem_menor();
+
     }

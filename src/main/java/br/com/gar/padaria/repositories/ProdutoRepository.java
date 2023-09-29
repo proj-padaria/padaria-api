@@ -23,7 +23,7 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             "             END AS percentual " +
             "       FROM produtos " +
             "       WHERE quantidade_em_estoque <= ponto_pedido " +
-            "       ORDER BY quantidade_em_estoque - ponto_pedido ", nativeQuery = true)
+            "       ORDER BY percentual ", nativeQuery = true)
 
          List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 

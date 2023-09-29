@@ -40,10 +40,10 @@ public class ProdutoController {
         return produtoRepository.f_reajuste_preco_venda(percentualReajuste);
     }
 
-        @GetMapping("estoquePontoPedido")
-       public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
-           return produtoRepository.verifica_ponto_pedido();
+    @GetMapping("estoquePontoPedido")
+     public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
+        return produtoRepository.verifica_ponto_pedido();
     }
-    //END POINT COM ERRO
+
 }
 

@@ -1,5 +1,6 @@
 # padaria-api
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/proj-padaria/padaria-api/blob/main/LICENSE)
+![Badge](https://img.shields.io/badge/GAR-PADARIA-API-%237159c1?style=for-the-badge&logo=ghost)
 
 Serviços (back-end) para o sistema de gestão de padarias.
 
@@ -12,6 +13,7 @@ O projeto padaria é uma aplicação back-end, como atividade final de um treina
 <li>Programação Java</li>
 <li>Banco de dados relacional</li>
 <li>Java Spring Boot</li>
+
 
 A aplicação fornece os end points para o projeto de front end.
 

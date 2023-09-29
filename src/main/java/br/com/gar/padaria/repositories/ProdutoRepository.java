@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     @Query(value = "select * from f_reajuste_preco_venda(?1)",nativeQuery = true)
-        int f_reajuste_preco_venda(int percentualReajuste);
+        int f_reajuste_preco_venda(Double percentualReajuste);
 
 
     @Query(value = "SELECT id,departamento_id, " +

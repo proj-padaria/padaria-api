@@ -13,7 +13,6 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
     @Query(value = "select * from f_reajuste_preco_venda(?1)",nativeQuery = true)
         int f_reajuste_preco_venda(Double percentualReajuste);
 
-
     @Query(value = "SELECT id,departamento_id, " +
             "             nome,quantidade_em_estoque, ponto_pedido, " +
             "             CASE " +
@@ -27,5 +26,4 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             "       ORDER BY percentual ", nativeQuery = true)
 
          List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
-
 }

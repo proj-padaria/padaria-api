@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "clientes")
+@RequestMapping(value = "pessoas")
 public class PessoaController {
     @Autowired
     private PessoaRepository pessoaRepository;

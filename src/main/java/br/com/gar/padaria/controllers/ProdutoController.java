@@ -1,4 +1,6 @@
 package br.com.gar.padaria.controllers;
+import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Produto;
 import br.com.gar.padaria.repositories.ProdutoRepository;
@@ -41,9 +43,13 @@ public class ProdutoController {
     }
 
     @GetMapping("estoquePontoPedido")
-     public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
+    public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
         return produtoRepository.verifica_ponto_pedido();
     }
 
-}
+    @GetMapping("produtosMargemMenor")
+    public List<ProdutosMargemMenorDTO> produtos_margem_menor() {
+        return produtoRepository.produtos_margem_menor();
 
+    }
+}

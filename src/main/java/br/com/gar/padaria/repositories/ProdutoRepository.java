@@ -1,5 +1,6 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Pessoa;
 import br.com.gar.padaria.models.Produto;
@@ -10,8 +11,8 @@ import java.util.List;
 
 public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
-    @Query(value = "select * from f_reajuste_preco_venda(?1)",nativeQuery = true)
-        int f_reajuste_preco_venda(Double percentualReajuste);
+    @Query(value = "select * from f_reajuste_preco_venda(?1)", nativeQuery = true)
+    int f_reajuste_preco_venda(Double percentualReajuste);
 
     @Query(value = "SELECT id,departamento_id, " +
             "             nome,quantidade_em_estoque, ponto_pedido, " +
@@ -25,5 +26,14 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             "       WHERE quantidade_em_estoque <= ponto_pedido " +
             "       ORDER BY percentual ", nativeQuery = true)
 
-         List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
-}
+    List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
+
+    @Query(value = "SELECT departamento_id, produto_id, nome, preco_venda, preco_unitario " +
+            "       FROM produtos " +
+            "       INNER JOIN compras_itens" +
+            "       ON produto_id = produtos.id " +
+            "       WHERE (((preco_venda / preco_unitario) - 1) * 100 = 28.7) " +
+            "       ORDER BY nome ", nativeQuery = true)
+
+    List<ProdutosMargemMenorDTO> produtos_margem_menor();
+    }

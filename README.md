@@ -1,6 +1,7 @@
 # padaria-api
-<img src="https://img.shields.io/static/v1?label=GAR&message=PADARIA-API&color=7159c1&style=for-the-badge&logo=ghost"/>
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/proj-padaria/padaria-api/blob/main/LICENSE)
+<img src="https://img.shields.io/static/v1?label=GAR&message=PADARIA-API&color=7159c1&style=for-the-badge&logo=ghost"/>
+
 
 Serviços (back-end) para o sistema de gestão de padarias.
 

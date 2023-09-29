@@ -6,12 +6,9 @@ public interface ProdutosMargemMenorDTO {
 
     Integer getProduto_Id();
 
-
     String getNome();
-
 
     Double getPreco_venda();
 
     Double getPreco_unitario();
-
 }

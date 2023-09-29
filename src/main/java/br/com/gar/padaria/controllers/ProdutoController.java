@@ -34,7 +34,6 @@ public class ProdutoController {
     @DeleteMapping("delete/{id}")
     public void produtoDeleteById(@PathVariable Integer id) {
         produtoRepository.deleteById(id);
-
     }
 
     @GetMapping("reajustarPreco/{percentualReajuste}")
@@ -50,6 +49,5 @@ public class ProdutoController {
     @GetMapping("produtosMargemMenor")
     public List<ProdutosMargemMenorDTO> produtos_margem_menor() {
         return produtoRepository.produtos_margem_menor();
-
     }
 }

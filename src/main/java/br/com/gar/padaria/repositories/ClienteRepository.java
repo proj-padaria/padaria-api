@@ -1,10 +1,8 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
-import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 
 public interface ClienteRepository extends JpaRepository <Cliente, Integer> {

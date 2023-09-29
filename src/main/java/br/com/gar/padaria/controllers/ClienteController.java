@@ -1,5 +1,7 @@
 package br.com.gar.padaria.controllers;
 
+import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Cliente;
 import br.com.gar.padaria.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,12 @@ public class ClienteController {
     public void clienteDeleteById(@PathVariable Integer id) {
         clienteRepository.deleteById(id);
     }
+
+    @GetMapping("clientesInadimplentes")
+    public List<ClientesInadimplentesDTO> clientes_inadimplentes() {
+        return clienteRepository.clientes_inadimplentes();
+    }
+
 }
 
 

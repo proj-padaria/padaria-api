@@ -1,4 +1,5 @@
 package br.com.gar.padaria.repositories;
+import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Pessoa;
 import br.com.gar.padaria.models.Produto;

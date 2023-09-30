@@ -4,7 +4,6 @@ import br.com.gar.padaria.models.Fornecedor;
 import br.com.gar.padaria.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -35,7 +34,4 @@ public class FornecedorController {
     public List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto() {
         return fornecedorRepository.fornecedor_maior_gasto();
     }
-
-
-
 }

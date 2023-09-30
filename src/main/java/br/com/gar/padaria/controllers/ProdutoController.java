@@ -1,5 +1,4 @@
 package br.com.gar.padaria.controllers;
-import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
 import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Produto;

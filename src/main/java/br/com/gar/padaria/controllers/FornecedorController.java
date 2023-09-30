@@ -1,4 +1,5 @@
 package br.com.gar.padaria.controllers;
+import br.com.gar.padaria.dtos.FornecedorMaiorGastoDTO;
 import br.com.gar.padaria.models.Fornecedor;
 import br.com.gar.padaria.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,12 @@ public class FornecedorController {
     public void fornecedorDeleteById(@PathVariable Integer id) {
         fornecedorRepository.deleteById(id);
     }
+
+    @GetMapping("fornecedorMaiorGasto")
+    public List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto() {
+        return fornecedorRepository.fornecedor_maior_gasto();
+    }
+
+
+
 }

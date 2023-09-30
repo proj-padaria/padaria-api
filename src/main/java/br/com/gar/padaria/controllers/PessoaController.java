@@ -56,18 +56,4 @@ public class PessoaController {
         }
     }
 
-   /* @Autowired
-    private ClienteMaiorCompraIntervaloDTO clienteMaiorCompraIntervaloDTO; */
-
-   /* @GetMapping("/maior-compra")
-    public ResponseEntity<Pessoa> encontrarClienteComMaiorCompraNoIntervalo(
-            @RequestParam("dataInicial") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInicial,
-            @RequestParam("dataFinal") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataFinal) {
-        Pessoa pessoa = clienteMaiorCompraIntervaloDTO.encontrarClienteComMaiorCompraNoIntervalo(dataInicial, dataFinal);
-        if (pessoa != null) {
-            return ResponseEntity.ok(pessoa);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }*/
 }

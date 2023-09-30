@@ -1,5 +1,6 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
 import br.com.gar.padaria.models.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,4 +18,5 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
             "       ORDER BY nome ", nativeQuery = true)
 
     List<ClientesInadimplentesDTO> clientes_inadimplentes();
+
 }

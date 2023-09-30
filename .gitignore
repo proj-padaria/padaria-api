@@ -29,3 +29,6 @@ replay_pid*
 # arquivos do IntelliJ IDE
 .idea
 
+# configuração do banco de dados
+ src/main/resources/application.properties
+ target/classes/application.properties

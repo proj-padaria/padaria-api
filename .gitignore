@@ -23,15 +23,15 @@
 hs_err_pid*
 replay_pid*
 
-<<<<<<< HEAD
 # arquivos de backup
 *.bak
-=======
+
 # arquivos de configuração do IntelliJ IDEA
 .idea
 
 # arquivos de configuração local do Java Spring
-
+src/main/resources/application.properties
+target/classes/application.properties
 
 # Arquivos binários
 
@@ -39,14 +39,6 @@ replay_pid*
 # Arquivos backup
 *.bak
 
-
-
-
->>>>>>> 92a0375 (.gitignore => .idea)
-
 # arquivos do IntelliJ IDE
 .idea
 
-# configuração do banco de dados
- src/main/resources/application.properties
- target/classes/application.properties

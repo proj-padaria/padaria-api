@@ -10,6 +10,7 @@ public interface FornecedorRepository extends JpaRepository<Fornecedor, Integer>
 
     List<Fornecedor> findAll();
 
+
     @Query(value =  "SELECT c.fornecedor_id, SUM (c.valor_total_recebido) AS valor_total_no_periodo " +
                     "FROM compras c " +
                     "	INNER JOIN fornecedores f " +
@@ -21,7 +22,6 @@ public interface FornecedorRepository extends JpaRepository<Fornecedor, Integer>
                     "ORDER BY valor_total_no_periodo DESC ", nativeQuery = true)
 
     List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto();
-
 }
 
 

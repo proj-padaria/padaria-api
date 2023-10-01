@@ -8,6 +8,4 @@ public interface ClientesSemComprarDTO {
 
     Date getData_ultima_compra();
     String getNome();
-
-
 }

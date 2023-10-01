@@ -29,6 +29,4 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
             "GROUP BY v.cliente_id, p.nome ", nativeQuery = true)
 
     List<ClientesSemComprarDTO> clientes_sem_comprar_mais_vinte_dias();
-
-
 }

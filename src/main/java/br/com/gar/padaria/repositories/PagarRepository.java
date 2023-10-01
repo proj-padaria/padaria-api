@@ -1,11 +1,9 @@
 package br.com.gar.padaria.repositories;
 
-import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
 import br.com.gar.padaria.dtos.TitulosAPagarDTO;
 import br.com.gar.padaria.models.Pagar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 
 public interface PagarRepository extends JpaRepository<Pagar,Integer> {
@@ -21,5 +19,4 @@ public interface PagarRepository extends JpaRepository<Pagar,Integer> {
             "ORDER BY data_vencimento " , nativeQuery = true)
 
     List<TitulosAPagarDTO> titulos_a_pagar_ate_hoje();
-
 }

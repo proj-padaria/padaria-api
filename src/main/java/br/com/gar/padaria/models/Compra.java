@@ -31,7 +31,7 @@ public class Compra implements Serializable {
     private String valor_total_comprado;
 
     @Column(nullable = true, length = 14)
-    private String valort_total_recebido;
+    private String valor_total_recebido;
 
     @Column(nullable = true, length = 8)
     private String data_recebimento;

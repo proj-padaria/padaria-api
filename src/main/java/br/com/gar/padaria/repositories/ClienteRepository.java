@@ -1,6 +1,10 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+<<<<<<< HEAD
 import br.com.gar.padaria.dtos.ClientesSemComprarDTO;
+=======
+import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
+>>>>>>> d020ddaeabe47bc525b38a5ec6109bbfc5114b66
 import br.com.gar.padaria.models.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,6 +23,7 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
 
     List<ClientesInadimplentesDTO> clientes_inadimplentes();
 
+<<<<<<< HEAD
 
     @Query(value =
             "SELECT v.cliente_id, p.nome, max(v.data_fim) AS data_ultima_compra " +
@@ -29,4 +34,6 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
             "GROUP BY v.cliente_id, p.nome ", nativeQuery = true)
 
     List<ClientesSemComprarDTO> clientes_sem_comprar_mais_vinte_dias();
+=======
+>>>>>>> d020ddaeabe47bc525b38a5ec6109bbfc5114b66
 }

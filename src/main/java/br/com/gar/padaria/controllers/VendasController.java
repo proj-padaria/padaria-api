@@ -1,5 +1,6 @@
 package br.com.gar.padaria.controllers;
 
+import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
 import br.com.gar.padaria.models.Cliente;
 import br.com.gar.padaria.models.Vendas;
 import br.com.gar.padaria.repositories.VendasRepository;
@@ -35,5 +36,10 @@ public class VendasController {
     @DeleteMapping(value = "delete/{id}")
     public void clienteDeleteById(@PathVariable Integer id) {
         vendasRepository.deleteById(id);
+    }
+
+    @GetMapping("clientesMaiorCompraIntervalo")
+    public List<ClientesMaiorCompraIntervaloDTO> clientes_maior_compra_intervalo() {
+        return vendasRepository.clientes_maior_compra_intervalo();
     }
 }

@@ -1,5 +1,6 @@
 package br.com.gar.padaria.controllers;
 import br.com.gar.padaria.dtos.ClientesInadimplentesDTO;
+import br.com.gar.padaria.dtos.ClientesSemComprarDTO;
 import br.com.gar.padaria.models.Cliente;
 import br.com.gar.padaria.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,12 @@ public class ClienteController {
     public List<ClientesInadimplentesDTO> clientes_inadimplentes() {
         return clienteRepository.clientes_inadimplentes();
     }
+
+    @GetMapping("clientesSemComprar")
+    public List<ClientesSemComprarDTO> clientes_sem_comprar_mais_vinte_dias() {
+        return clienteRepository.clientes_sem_comprar_mais_vinte_dias();
+    }
+
 }
 
 

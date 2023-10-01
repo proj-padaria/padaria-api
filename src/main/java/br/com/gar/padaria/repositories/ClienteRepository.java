@@ -23,8 +23,6 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
 
     List<ClientesInadimplentesDTO> clientes_inadimplentes();
 
-<<<<<<< HEAD
-
     @Query(value =
             "SELECT v.cliente_id, p.nome, max(v.data_fim) AS data_ultima_compra " +
             "FROM vendas v " +

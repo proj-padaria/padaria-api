@@ -51,8 +51,6 @@ public class ClienteController {
     public List<ClientesSemComprarDTO> clientes_sem_comprar_mais_vinte_dias() {
         return clienteRepository.clientes_sem_comprar_mais_vinte_dias();
     }
-=======
->>>>>>> d020ddaeabe47bc525b38a5ec6109bbfc5114b66
 }
 
 

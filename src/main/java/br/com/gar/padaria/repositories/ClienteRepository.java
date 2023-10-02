@@ -10,12 +10,12 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
 
     List<Cliente> findAll();
 
-    @Query(value = "SELECT nome, dia_vencimento_fiado " +
-            "       FROM clientes " +
-            "       INNER JOIN pessoas" +
-            "       ON pessoa_id = pessoas.id " +
-            "       WHERE dia_vencimento_fiado < 20 " +
-            "       ORDER BY nome ", nativeQuery = true)
+    @Query(value = "SELECT p.nome, c.dia_vencimento_fiado " +
+            "       FROM clientes c" +
+            "       INNER JOIN pessoas p" +
+            "       ON c.pessoa_id = p.id " +
+            "       WHERE c.dia_vencimento_fiado < 20 " +
+            "       ORDER BY p.nome ", nativeQuery = true)
 
     List<ClientesInadimplentesDTO> clientes_inadimplentes();
 

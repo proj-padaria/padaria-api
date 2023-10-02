@@ -28,12 +28,12 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 
-    @Query(value = "SELECT departamento_id, produto_id, nome, preco_venda, preco_unitario " +
-            "       FROM produtos " +
-            "       INNER JOIN compras_itens" +
-            "       ON produto_id = produtos.id " +
-            "       WHERE (((preco_venda / preco_unitario) - 1) * 100 = 28.7) " +
-            "       ORDER BY nome ", nativeQuery = true)
+    @Query(value = "SELECT p.departamento_id, ci.produto_id, p.nome, p.preco_venda, ci.preco_unitario " +
+            "       FROM produtos p" +
+            "       INNER JOIN compras_itens ci" +
+            "       ON ci.produto_id = p.id " +
+            "       WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 = 28.7) " +
+            "       ORDER BY p.nome ", nativeQuery = true)
 
     List<ProdutosMargemMenorDTO> produtos_margem_menor();
     }

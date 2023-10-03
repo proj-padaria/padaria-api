@@ -26,8 +26,11 @@ replay_pid*
 # arquivos de backup
 *.bak
 
-# arquivos do IntelliJ IDE
+# arquivos de configuração do IntelliJ IDEA
 .idea
 
-# arquivos de login
-*.application.properties
+# arquivos de configuração local do Java Spring
+src/main/resources/application.properties
+target/classes/application.properties
+
+

@@ -29,17 +29,17 @@ A documentação deste projeto e as ddl's para execução do banco de dados enco
  <!--ts-->
 * [Pré-Requisitos](#pre-requisitos)
   
-  - Necessário Instalação de uma IDE(recomendado IntelliJ) para integração com o banco de dados  
-  - Necessário Instalação de um SQL(recomendado Postgresql) para que as ddl's sejam executadas  
-  - Necessário Instalação de software que permite enviar solicitações HTTP para APIs (recomendado Postman) para que seja possível o teste dos end points
+  - Necessário Instalação de uma IDE;
+  - Necessário Instalação Postgresql para que as ddl's sejam executadas;
+  - Para teste das API's é interessante um app que trate os bodies (exemplo: POSTMAN);
   <!--te-->
 
   <!--ts-->
 * [Recomendações](#recomendações)
    
-  Para  a conclusão dos testes do projeto é necessário que as ddl's sejam executadas no banco de dados.
-  Após a execução das ddl's, o projeto padaria-api deverá ser executado na IDE para que o localhost seja gerado e os endpoint's sejam testados.
-  
+  Para  inicio dos testes do projeto é necessário que as ddl's sejam executadas no banco de dados.
+  Após a execução das ddl's, o projeto padaria-api deverá ser executado na IDE escolhida.
+  Os testes poderão ser feitos em http://localhost:8080/nome_do_endpoint.
   <!--te-->
 
 ### Tecnologias utilizadas
@@ -47,6 +47,7 @@ A documentação deste projeto e as ddl's para execução do banco de dados enco
 <li>Spring Boot</li>
 <li>JPA / Hibernate</li>
 <li>Maven</li>
+<li>Postgresql</li>
 
 ### Banco de dados - Modelagem e DDL
 https://github.com/proj-padaria/padaria-doc

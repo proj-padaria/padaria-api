@@ -42,7 +42,7 @@ public class ProdutoController {
 
     @GetMapping("estoquePontoPedido")
      public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
-        return produtoRepository.verifica_ponto_pedido();
+            return produtoRepository.verifica_ponto_pedido();
     }
 
 }

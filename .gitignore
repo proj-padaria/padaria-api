@@ -29,3 +29,5 @@ replay_pid*
 # arquivos do IntelliJ IDE
 .idea
 
+# arquivos de login
+*.application.properties

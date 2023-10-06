@@ -55,6 +55,4 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             " ORDER BY p.id    " , nativeQuery = true)
 
     List<VendasDiaSemanaDTO> vendas_dia_semana(LocalDate dataInicial, LocalDate dataFinal);
-
-
 }

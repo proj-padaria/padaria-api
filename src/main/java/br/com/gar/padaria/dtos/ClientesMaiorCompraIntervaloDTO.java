@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ClientesMaiorCompraIntervaloDTO {
 
-    Integer getId();
+    Integer getCliente_id();
 
     String getNome();
 
-    Double getValor_total();
+    Double getValor_total_gasto();
     }

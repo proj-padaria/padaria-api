@@ -30,14 +30,9 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 
-    @Query(value = "SELECT p.departamento_id, ci.produto_id, p.nome, p.preco_venda, ci.preco_unitario " +
-            "       FROM produtos p" +
-            "       INNER JOIN compras_itens ci" +
-            "       ON ci.produto_id = p.id " +
-            "       WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 = 28.7) " +
-            "       ORDER BY p.nome ", nativeQuery = true)
+    @Query(value = "select * from f_produtos_margem_menor(?1)", nativeQuery = true)
+    List<ProdutosMargemMenorDTO> f_produtos_margem_menor(Float porcentagem);
 
-    List<ProdutosMargemMenorDTO> produtos_margem_menor();
 
     @Query(value = "SELECT p.id, p.nome, " +
             "	   CASE EXTRACT( DOW FROM v.data) " +

@@ -53,9 +53,9 @@ public class ProdutoController {
         return produtoRepository.verifica_ponto_pedido();
     }
 
-    @GetMapping("produtosMargemMenor")
-    public List<ProdutosMargemMenorDTO> produtos_margem_menor() {
-        return produtoRepository.produtos_margem_menor();
+    @GetMapping("produtosMargemMenor/{porcentagem}")
+    public List<ProdutosMargemMenorDTO> produtos_margem_menor(@PathVariable("porcentagem") Float porcentagem) {
+        return produtoRepository.f_produtos_margem_menor(porcentagem);
     }
 
     @GetMapping("vendasDiaSemana/{dataInicial}/{dataFinal}")

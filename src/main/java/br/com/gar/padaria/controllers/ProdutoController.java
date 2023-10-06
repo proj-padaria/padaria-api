@@ -63,7 +63,4 @@ public class ProdutoController {
                                                       @PathVariable("dataFinal") LocalDate dataFinal){
         return produtoRepository.vendas_dia_semana(dataInicial, dataFinal);
     }
-
-
-
 }

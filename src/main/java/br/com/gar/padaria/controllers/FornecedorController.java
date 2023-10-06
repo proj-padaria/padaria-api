@@ -4,6 +4,8 @@ import br.com.gar.padaria.models.Fornecedor;
 import br.com.gar.padaria.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -31,7 +33,8 @@ public class FornecedorController {
     }
 
     @GetMapping("fornecedorMaiorGasto")
-    public List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto() {
-        return fornecedorRepository.fornecedor_maior_gasto();
+    public List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto(@PathVariable LocalDate dataInicial,
+                                                                @PathVariable LocalDate dataFinal) {
+        return fornecedorRepository.fornecedor_maior_gasto(dataInicial, dataFinal);
     }
 }

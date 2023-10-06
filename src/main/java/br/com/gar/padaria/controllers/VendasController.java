@@ -44,33 +44,10 @@ public class VendasController {
     }
 
     @GetMapping("clientesMaiorCompraIntervalo/{dataInicial}/{dataFinal}")
-    public List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(@PathVariable Date dataInicial, @PathVariable Date dataFinal) {
+    public List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(@PathVariable LocalDate dataInicial,
+                                                                            @PathVariable LocalDate dataFinal) {
         return vendasRepository.cliente_maior_valor_compra(dataInicial, dataFinal);
     }
 
-
-
-   /* @GetMapping("clientesMaiorCompraIntervalo/{di}/{df}")
-    public List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(
-            @RequestParam("dataInicial") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial,
-            @RequestParam("dataFinal") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal) {
-        // Faça o processamento com as datas aqui
-        return vendasRepository.cliente_maior_valor_compra(dataInicial, dataFinal);
-
-}*/
-
-    @GetMapping("clientesMaiorCompraIntervalo/{di}/{df}")
-    public List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(@PathVariable @DateTimeFormat String di, @PathVariable @DateTimeFormat String df) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date dataInicial = dateFormat.parse(di);
-            Date dataFinal = dateFormat.parse(df);
-            // Use parsedDate in your code
-        } catch (ParseException e) {
-            // Handle the parsing exception
-        }
-
-        return null;
-    }
 
 }

@@ -4,17 +4,13 @@ import br.com.gar.padaria.models.Vendas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public interface VendasRepository  extends JpaRepository<Vendas, Integer> {
 
-    @Query(value =  "SELECT v.cliente_id, p.nome, SUM(v.valor_total) AS valor_total_gasto " +
-            "FROM vendas v " +
-            "INNER JOIN pessoas p " +
-            "ON v.cliente_id = p.id " +
-            "WHERE v.data_fim BETWEEN '20/09/2023' AND '30/09/2023' " +
-            "GROUP BY p.nome, v.cliente_id " +
-            "ORDER BY valor_total_gasto DESC ", nativeQuery = true)
+    @Query(value =  "SELECT * FROM f_cliente_maior_valor_compra(?2) ", nativeQuery = true)
+    List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(Date dataInicial, Date dataFinal);
 
-    List<ClientesMaiorCompraIntervaloDTO> clientes_maior_compra_intervalo();
 }

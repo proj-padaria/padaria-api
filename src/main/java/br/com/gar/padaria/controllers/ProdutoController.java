@@ -41,13 +41,8 @@ public class ProdutoController {
     }
 
     @GetMapping("estoquePontoPedido")
-<<<<<<< HEAD
-     public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
-            return produtoRepository.verifica_ponto_pedido();
-=======
     public List<VerificaPontoPedidoDTO> verifica_ponto_pedido() {
         return produtoRepository.verifica_ponto_pedido();
->>>>>>> 22151d4f135d3c970a3a24d20a5f547c899ed664
     }
 
     @GetMapping("produtosMargemMenor")

@@ -54,8 +54,8 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     @Query(value = "SELECT p.departamento_id, p.id, p.nome, p.preco_venda, ci.preco_unitario " +
                     "FROM produtos p " +
-                    "INNER JOIN compras_itens ci " +
-                    "ON p.id = p.id " +
+                    "   INNER JOIN compras_itens ci " +
+                    "       ON p.id = p.id " +
                     "WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 < ?1) " +
                     "ORDER BY p.nome, ci.preco_unitario, p.preco_venda, p.id, p.departamento_id" , nativeQuery = true)
 

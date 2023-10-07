@@ -1,18 +1,10 @@
 package br.com.gar.padaria.controllers;
-import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
-import br.com.gar.padaria.dtos.VendasDiaSemanaDTO;
-import br.com.gar.padaria.dtos.VendasMediaPorSemanaDTO;
-import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
+import br.com.gar.padaria.dtos.*;
 import br.com.gar.padaria.models.Produto;
 import br.com.gar.padaria.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -71,4 +63,18 @@ public class ProdutoController {
                                                            @PathVariable("dataFinal") LocalDate dataFinal){
         return produtoRepository.vendas_media_por_semana(dataInicial, dataFinal);
     }
+
+    @GetMapping("vendasMediaPorQuinzena/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorQuinzenaDTO> vendas_media_por_quinzena(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                                     @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_quinzena(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorMes/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorMesDTO> vendas_media_por_mes(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_mes(dataInicial, dataFinal);
+    }
+
+
 }

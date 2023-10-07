@@ -76,5 +76,17 @@ public class ProdutoController {
         return produtoRepository.vendas_media_por_mes(dataInicial, dataFinal);
     }
 
+    @GetMapping("vendasMediaPorTrimestre/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorTrimestreDTO> vendas_media_por_trimestre(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_trimestre(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorBairro/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorBairroDTO> f_venda_media_bairro(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                                       @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.f_venda_media_bairro(dataInicial, dataFinal);
+    }
+
 
 }

@@ -1,6 +1,6 @@
 package br.com.gar.padaria.dtos;
 
-public interface VendasMediaPorBairro {
+public interface VendasMediaPorBairroDTO {
 
 
     int getProduto_id();

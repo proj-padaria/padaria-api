@@ -1,6 +1,6 @@
 package br.com.gar.padaria.dtos;
 
-public interface VendasMediaPorMes {
+public interface VendasMediaPorMesDTO {
         int getId();
         String getNome();
 

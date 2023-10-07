@@ -61,6 +61,7 @@ public class ProdutoController {
     @GetMapping("vendasDiaSemana/{dataInicial}/{dataFinal}")
     public List<VendasDiaSemanaDTO> vendas_dia_semana(@PathVariable("dataInicial") LocalDate dataInicial,
                                                       @PathVariable("dataFinal") LocalDate dataFinal){
+
         return produtoRepository.vendas_dia_semana(dataInicial, dataFinal);
     }
 }

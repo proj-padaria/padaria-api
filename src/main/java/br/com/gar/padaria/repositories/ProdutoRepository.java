@@ -67,6 +67,4 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
                     "ORDER BY p.nome, ci.preco_unitario, p.preco_venda, p.id, p.departamento_id" , nativeQuery = true)
 
     List<ProdutosMargemMenorDTO> produtos_margem_menor(Float porcentagem);
-
-
 }

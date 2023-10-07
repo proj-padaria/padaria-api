@@ -13,6 +13,4 @@ public interface ClientesInadimplentesDTO {
     Date getData_vencimento();
 
     Date getData_maior_atraso();
-
-
 }

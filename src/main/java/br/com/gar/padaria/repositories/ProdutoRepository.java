@@ -30,9 +30,12 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 
+    /*
     @Query(value = "select * from f_produtos_margem_menor(?1)", nativeQuery = true)
     List<ProdutosMargemMenorDTO> f_produtos_margem_menor(Float porcentagem);
 
+
+     */
 
     @Query(value = "SELECT p.id, p.nome, " +
             "	   CASE EXTRACT( DOW FROM v.data) " +
@@ -55,4 +58,15 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             " ORDER BY p.id    " , nativeQuery = true)
 
     List<VendasDiaSemanaDTO> vendas_dia_semana(LocalDate dataInicial, LocalDate dataFinal);
+
+    @Query(value = "SELECT p.departamento_id, p.id, p.nome, p.preco_venda, ci.preco_unitario " +
+                    "FROM produtos p " +
+                    "INNER JOIN compras_itens ci " +
+                    "ON p.id = p.id " +
+                    "WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 < ?1) " +
+                    "ORDER BY p.nome, ci.preco_unitario, p.preco_venda, p.id, p.departamento_id" , nativeQuery = true)
+
+    List<ProdutosMargemMenorDTO> produtos_margem_menor(Float porcentagem);
+
+
 }

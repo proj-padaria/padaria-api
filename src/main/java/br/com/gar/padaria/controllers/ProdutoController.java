@@ -55,7 +55,7 @@ public class ProdutoController {
 
     @GetMapping("produtosMargemMenor/{porcentagem}")
     public List<ProdutosMargemMenorDTO> produtos_margem_menor(@PathVariable("porcentagem") Float porcentagem) {
-        return produtoRepository.f_produtos_margem_menor(porcentagem);
+        return produtoRepository.produtos_margem_menor(porcentagem);
     }
 
     @GetMapping("vendasDiaSemana/{dataInicial}/{dataFinal}")

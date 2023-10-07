@@ -32,9 +32,10 @@ public class FornecedorController {
         fornecedorRepository.deleteById(id);
     }
 
-    @GetMapping("fornecedorMaiorGasto")
+    @GetMapping("fornecedorMaiorGasto/{dataInicial}/{dataFinal}")
     public List<FornecedorMaiorGastoDTO> fornecedor_maior_gasto(@PathVariable LocalDate dataInicial,
                                                                 @PathVariable LocalDate dataFinal) {
+
         return fornecedorRepository.fornecedor_maior_gasto(dataInicial, dataFinal);
     }
 }

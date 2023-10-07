@@ -31,15 +31,6 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VerificaPontoPedidoDTO> verifica_ponto_pedido();
 
-    @Query(value = "SELECT p.departamento_id, ci.produto_id, p.nome, p.preco_venda, ci.preco_unitario " +
-            "       FROM produtos p" +
-            "       INNER JOIN compras_itens ci" +
-            "       ON ci.produto_id = p.id " +
-            "       WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 = 28.7) " +
-            "       ORDER BY p.nome ", nativeQuery = true)
-
-    List<ProdutosMargemMenorDTO> produtos_margem_menor();
-
     @Query(value = "SELECT p.id, p.nome, " +
             "	   CASE EXTRACT( DOW FROM v.data) " +
             "               WHEN 0 THEN 'Domingo'     " +
@@ -62,6 +53,7 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VendasDiaSemanaDTO> vendas_dia_semana(LocalDate dataInicial, LocalDate dataFinal);
 
+
     @Query(value = "SELECT p.id, p.nome,      " +
             "	        SUM(vi.quantidade/7) AS quantidade_media_por_semana     " +
             "	    FROM produtos p     " +
@@ -74,4 +66,14 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
             "	    ORDER BY p.id     "  , nativeQuery = true)
 
     List<VendasMediaPorSemanaDTO> vendas_media_por_semana(LocalDate dataInicial, LocalDate dataFinal);
+
+    @Query(value = "SELECT p.departamento_id, p.id, p.nome, p.preco_venda, ci.preco_unitario " +
+                    "FROM produtos p " +
+                    "   INNER JOIN compras_itens ci " +
+                    "       ON p.id = p.id " +
+                    "WHERE (((p.preco_venda / ci.preco_unitario) - 1) * 100 < ?1) " +
+                    "ORDER BY p.nome, ci.preco_unitario, p.preco_venda, p.id, p.departamento_id" , nativeQuery = true)
+
+    List<ProdutosMargemMenorDTO> produtos_margem_menor(Float porcentagem);
+
 }

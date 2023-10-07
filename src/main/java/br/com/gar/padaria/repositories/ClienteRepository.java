@@ -24,7 +24,7 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
             "FROM vendas v " +
             "   INNER JOIN pessoas p " +
             "       ON v.cliente_id = p.id " +
-            "WHERE v.data_fim <= (current_date - 1) " +
+            "WHERE v.data_fim <= (current_date - 20) " +
             "GROUP BY v.cliente_id, p.nome ", nativeQuery = true)
 
     List<ClientesSemComprarDTO> clientes_sem_comprar_mais_vinte_dias();

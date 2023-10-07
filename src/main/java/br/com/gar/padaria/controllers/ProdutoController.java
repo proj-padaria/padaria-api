@@ -1,6 +1,7 @@
 package br.com.gar.padaria.controllers;
 import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
 import br.com.gar.padaria.dtos.VendasDiaSemanaDTO;
+import br.com.gar.padaria.dtos.VendasMediaPorSemanaDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Produto;
 import br.com.gar.padaria.repositories.ProdutoRepository;
@@ -64,6 +65,10 @@ public class ProdutoController {
         return produtoRepository.vendas_dia_semana(dataInicial, dataFinal);
     }
 
-
+    @GetMapping("vendasMediaPorSemana/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorSemanaDTO> vendas_media_por_semana(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_semana(dataInicial, dataFinal);
+    }
 
 }

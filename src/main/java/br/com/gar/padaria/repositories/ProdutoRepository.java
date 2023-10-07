@@ -1,6 +1,7 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
 import br.com.gar.padaria.dtos.VendasDiaSemanaDTO;
+import br.com.gar.padaria.dtos.VendasMediaPorSemanaDTO;
 import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
 import br.com.gar.padaria.models.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -61,5 +62,16 @@ public interface ProdutoRepository extends JpaRepository<Produto,Integer> {
 
     List<VendasDiaSemanaDTO> vendas_dia_semana(LocalDate dataInicial, LocalDate dataFinal);
 
+    @Query(value = "SELECT p.id, p.nome,      " +
+            "	        SUM(vi.quantidade/7) AS quantidade_media_por_semana     " +
+            "	    FROM produtos p     " +
+            "	        INNER JOIN vendas_itens vi     " +
+            "       	   	ON p.id = vi.produto_id     " +
+            "	        INNER JOIN vendas v      " +
+            "	 	        ON vi.venda_id = v.id     " +
+            "	    WHERE v.data BETWEEN ?1 AND ?2     " +
+            "	    GROUP BY p.id,p.nome      " +
+            "	    ORDER BY p.id     "  , nativeQuery = true)
 
+    List<VendasMediaPorSemanaDTO> vendas_media_por_semana(LocalDate dataInicial, LocalDate dataFinal);
 }

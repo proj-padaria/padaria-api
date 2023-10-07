@@ -11,12 +11,4 @@ public interface ProdutosMargemMenorDTO {
     Integer getProduto_id();
 
     Integer getDepartamento_id();
-
-
-
-
-
-
-
-
 }

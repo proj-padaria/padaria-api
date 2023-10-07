@@ -16,7 +16,7 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
                     "       ON c.pessoa_id = p.id " +
                     "   INNER JOIN receber r " +
                     "       ON r.cliente_id = p.id " +
-                    "WHERE c.dia_vencimento_fiado < 20 " +
+                    "WHERE r.data_vencimento < current_date " +
                     "GROUP BY p.nome, c.dia_vencimento_fiado, r.valor, r.data_vencimento " +
                     "ORDER BY p.nome ", nativeQuery = true)
 

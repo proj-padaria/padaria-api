@@ -1,17 +1,10 @@
 package br.com.gar.padaria.controllers;
-import br.com.gar.padaria.dtos.ProdutosMargemMenorDTO;
-import br.com.gar.padaria.dtos.VendasDiaSemanaDTO;
-import br.com.gar.padaria.dtos.VerificaPontoPedidoDTO;
+import br.com.gar.padaria.dtos.*;
 import br.com.gar.padaria.models.Produto;
 import br.com.gar.padaria.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -64,4 +57,36 @@ public class ProdutoController {
 
         return produtoRepository.vendas_dia_semana(dataInicial, dataFinal);
     }
+
+    @GetMapping("vendasMediaPorSemana/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorSemanaDTO> vendas_media_por_semana(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_semana(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorQuinzena/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorQuinzenaDTO> vendas_media_por_quinzena(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                                     @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_quinzena(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorMes/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorMesDTO> vendas_media_por_mes(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_mes(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorTrimestre/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorTrimestreDTO> vendas_media_por_trimestre(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                           @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.vendas_media_por_trimestre(dataInicial, dataFinal);
+    }
+
+    @GetMapping("vendasMediaPorBairro/{dataInicial}/{dataFinal}")
+    public List<VendasMediaPorBairroDTO> f_venda_media_bairro(@PathVariable("dataInicial") LocalDate dataInicial,
+                                                                       @PathVariable("dataFinal") LocalDate dataFinal){
+        return produtoRepository.f_venda_media_bairro(dataInicial, dataFinal);
+    }
+
+
 }

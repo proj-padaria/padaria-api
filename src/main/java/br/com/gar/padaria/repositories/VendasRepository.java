@@ -1,6 +1,7 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
 import br.com.gar.padaria.dtos.ComprasVendasUltimoAnoDTO;
+import br.com.gar.padaria.dtos.ValorTicketMedioEquantidadEVisitasDTO;
 import br.com.gar.padaria.models.Vendas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,8 +19,27 @@ public interface VendasRepository  extends JpaRepository<Vendas, Integer> {
             "        WHERE v.data BETWEEN ?1 AND ?2 " +
             "        GROUP BY v.cliente_id, p.nome " +
             "        ORDER BY valor_total_gasto DESC; ", nativeQuery = true)
-
     List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(LocalDate dataInicial, LocalDate dataFinal);
 
 
+    @Query(value ="SELECT COUNT(ID) AS quantidade_visitas, " +
+            "		ROUND(AVG(v.valor_total),2)AS valor_ticket_medio, " +
+            "		   CASE extract (MONTH FROM v.data)  " +
+            "         WHEN 1 THEN 'Janeiro' " +
+            "         WHEN 2 THEN 'Fevereiro' " +
+            "         WHEN 3 THEN 'Março' " +
+            "         WHEN 4 THEN 'Abril' " +
+            "         WHEN 5 THEN 'Maio' " +
+            "         WHEN 6 THEN 'Junho' " +
+            "         WHEN 7 THEN 'Julho' " +
+            "         WHEN 8 THEN 'Agosto' " +
+            "         WHEN 9 THEN 'Setembro' " +
+            "         WHEN 10 THEN 'Outubro' " +
+            "         WHEN 11 THEN 'Novembro' " +
+            "         WHEN 12 THEN 'Dezembro' " +
+            "       END AS mes_venda " +
+            "FROM vendas v " +
+            "GROUP BY mes_venda " +
+            "ORDER BY mes_venda " ,nativeQuery = true )
+    List<ValorTicketMedioEquantidadEVisitasDTO> valor_ticket_meio_e_quantidade_visitas();
 }

@@ -2,6 +2,7 @@ package br.com.gar.padaria.controllers;
 
 import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
 import br.com.gar.padaria.dtos.ComprasVendasUltimoAnoDTO;
+import br.com.gar.padaria.dtos.ValorTicketMedioEquantidadEVisitasDTO;
 import br.com.gar.padaria.models.Cliente;
 import br.com.gar.padaria.models.Vendas;
 import br.com.gar.padaria.repositories.VendasRepository;
@@ -49,8 +50,9 @@ public class VendasController {
                                                                             @PathVariable LocalDate dataFinal) {
         return vendasRepository.cliente_maior_valor_compra(dataInicial, dataFinal);
     }
-
-
-
+    @GetMapping("valorTicketMedioEQuantidadeVisitas")
+    public List<ValorTicketMedioEquantidadEVisitasDTO> valor_ticket_meio_e_quantidade_visitas(){
+        return vendasRepository.valor_ticket_meio_e_quantidade_visitas();
+    }
 
 }

@@ -1,5 +1,6 @@
 package br.com.gar.padaria.repositories;
 import br.com.gar.padaria.dtos.ClientesMaiorCompraIntervaloDTO;
+import br.com.gar.padaria.dtos.ComprasVendasUltimoAnoDTO;
 import br.com.gar.padaria.models.Vendas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,5 +20,6 @@ public interface VendasRepository  extends JpaRepository<Vendas, Integer> {
             "        ORDER BY valor_total_gasto DESC; ", nativeQuery = true)
 
     List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(LocalDate dataInicial, LocalDate dataFinal);
+
 
 }

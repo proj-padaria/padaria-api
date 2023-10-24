@@ -22,24 +22,25 @@ public interface VendasRepository  extends JpaRepository<Vendas, Integer> {
     List<ClientesMaiorCompraIntervaloDTO> cliente_maior_valor_compra(LocalDate dataInicial, LocalDate dataFinal);
 
 
-    @Query(value ="SELECT COUNT(ID) AS quantidade_visitas, " +
-            "		ROUND(AVG(v.valor_total),2)AS valor_ticket_medio, " +
-            "		   CASE extract (MONTH FROM v.data)  " +
-            "         WHEN 1 THEN 'Janeiro' " +
-            "         WHEN 2 THEN 'Fevereiro' " +
-            "         WHEN 3 THEN 'Março' " +
-            "         WHEN 4 THEN 'Abril' " +
-            "         WHEN 5 THEN 'Maio' " +
-            "         WHEN 6 THEN 'Junho' " +
-            "         WHEN 7 THEN 'Julho' " +
-            "         WHEN 8 THEN 'Agosto' " +
-            "         WHEN 9 THEN 'Setembro' " +
-            "         WHEN 10 THEN 'Outubro' " +
-            "         WHEN 11 THEN 'Novembro' " +
-            "         WHEN 12 THEN 'Dezembro' " +
-            "       END AS mes_venda " +
-            "FROM vendas v " +
-            "GROUP BY mes_venda " +
-            "ORDER BY mes_venda " ,nativeQuery = true )
+    @Query(value =" SELECT COUNT(ID) AS quantidade_visitas,  " +
+            " 		ROUND(AVG(v.valor_total),2)AS valor_ticket_medio,  " +
+            " 		   CASE extract (MONTH FROM v.data)  " +
+            "          WHEN 1 THEN 'Janeiro' " +
+            "          WHEN 2 THEN 'Fevereiro' " +
+            "          WHEN 3 THEN 'Março' " +
+            "          WHEN 4 THEN 'Abril' " +
+            "          WHEN 5 THEN 'Maio' " +
+            "          WHEN 6 THEN 'Junho' " +
+            "          WHEN 7 THEN 'Julho' " +
+            "          WHEN 8 THEN 'Agosto' " +
+            "          WHEN 9 THEN 'Setembro' " +
+            "          WHEN 10 THEN 'Outubro' " +
+            "          WHEN 11 THEN 'Novembro' " +
+            "          WHEN 12 THEN 'Dezembro' " +
+            "        END AS mes_venda " +
+            " FROM vendas v " +
+            " WHERE v.data > CURRENT_DATE - interval '365 days' " +
+            " GROUP BY mes_venda " +
+            " ORDER BY mes_venda " ,nativeQuery = true )
     List<ValorTicketMedioEquantidadEVisitasDTO> valor_ticket_meio_e_quantidade_visitas();
 }

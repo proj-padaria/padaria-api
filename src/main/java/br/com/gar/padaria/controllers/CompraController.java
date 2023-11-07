@@ -1,5 +1,6 @@
 package br.com.gar.padaria.controllers;
 
+import br.com.gar.padaria.dtos.ComprasVendasUltimoAnoDTO;
 import br.com.gar.padaria.models.Compra;
 import br.com.gar.padaria.repositories.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,10 @@ public class CompraController {
     public void delete(@PathVariable Integer id) {
 
         compraRepository.deleteById(id);
+    }
+
+    @GetMapping("comprasVendasUltimoANO")
+    public List<ComprasVendasUltimoAnoDTO> compras_vendas_ultimo_ano(){
+        return compraRepository.compras_vendas_ultimo_ano();
     }
 }

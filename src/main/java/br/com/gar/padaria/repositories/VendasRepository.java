@@ -41,6 +41,6 @@ public interface VendasRepository  extends JpaRepository<Vendas, Integer> {
             " FROM vendas v " +
             " WHERE v.data > CURRENT_DATE - interval '365 days' " +
             " GROUP BY mes_venda " +
-            " ORDER BY mes_venda " ,nativeQuery = true )
+            " ORDER BY EXTRACT (MONTH FROM CURRENT_DATE) " ,nativeQuery = true )
     List<ValorTicketMedioEquantidadEVisitasDTO> valor_ticket_meio_e_quantidade_visitas();
 }
